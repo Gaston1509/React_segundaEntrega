@@ -1,0 +1,16 @@
+.titulo{
+    max-width: 500px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #686060;
+    text-align: center;
+    margin: 0 auto;
+    margin-top: 1rem;
+    letter-spacing: 2px;
+    border: 3px solid #b29a98;
+    border-radius: 5px;
+    box-shadow: 5px 5px 3px 0px rgba(83, 80, 80, 0.75);
+    background-color: rgb(120, 233, 120);
+    
+}
