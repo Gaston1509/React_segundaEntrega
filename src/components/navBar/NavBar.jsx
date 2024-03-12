@@ -12,9 +12,8 @@ const NavBar = () => {
     <div>
 
     </div>
-
     <Menu>
-  <MenuButton as={Button} rightIcon={<TiArrowSortedDown />}>
+  <MenuButton as={Button} rightIcon={<TiArrowSortedDown />}  className='Menu'>
     Variedades
   </MenuButton>
   <MenuList>
@@ -23,7 +22,7 @@ const NavBar = () => {
     <MenuItem>Irish Red</MenuItem>
     <MenuItem>Ipa</MenuItem>
   </MenuList>
-</Menu>
+  </Menu>
 
     <CartWidget/>
 </div>
