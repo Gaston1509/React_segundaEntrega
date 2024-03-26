@@ -54,5 +54,12 @@ export const getProductsByCategory = (category) => {
             resolve(productosfiltrados);
         }, 2000)
     })
+};
 
+// FILTRAR PRODUCTO USANDO ParseInt
+export const getProductById = (id) => {
+    return new Promise((resolve) => {
+        const productoFiltrado = productos.find((el) => el.id === parseInt(id))
+        resolve(productoFiltrado);
+    })
 }
