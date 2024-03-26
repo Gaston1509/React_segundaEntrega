@@ -1,10 +1,12 @@
 import React from 'react'
+import './item.css'
 import { Card, CardHeader, CardBody, CardFooter, Stack, Image, Heading, Button, ButtonGroup, Divider, Text } from '@chakra-ui/react'
 
     const Item = ({nombre, descripcion, precio, categoria, image}) => {
 
     return (
-        <Card maxW='sm'>
+    <div className='card'>
+        <Card  maxW='sm'>
     <CardBody>
         <Image
         src= {image}
@@ -30,6 +32,8 @@ import { Card, CardHeader, CardBody, CardFooter, Stack, Image, Heading, Button, 
         </ButtonGroup>
     </CardFooter>
     </Card>
+    </div>
+
   )
 }
 

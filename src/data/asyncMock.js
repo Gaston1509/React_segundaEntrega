@@ -43,3 +43,16 @@ export const getProducts = () => {
         }, 2000);
     });
 };
+
+// FILTRAR POR CATEGORIA
+export const getProductsByCategory = (category) => {
+    return new Promise((resolve) => {
+        const productosfiltrados = productos.filter(
+            (el) => el.categoria === category
+            );
+        setTimeout (() =>{
+            resolve(productosfiltrados);
+        }, 2000)
+    })
+
+}
