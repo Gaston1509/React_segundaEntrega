@@ -1,0 +1,23 @@
+.contadores{
+    display: flex;
+    justify-content: center;
+    
+}
+.decrementar{
+    font-size: 1rem;
+    background-color: #a2a2d4;
+    width: 30px;
+    
+}
+.incrementar{
+    font-size: 1rem;
+    background-color: #a2a2d4;
+    width: 30px;
+}
+.count{
+    padding-left: 10px;
+    padding-right: 10px;
+    padding-top: 10px;
+ 
+   
+}

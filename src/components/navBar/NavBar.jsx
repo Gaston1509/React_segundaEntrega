@@ -13,12 +13,6 @@ const NavBar = () => {
         <Link to='/'><img src="./src/assets/logo_1.png" alt="" className='logo'/></Link>
         </Heading>
 
-        {/* <Heading>
-        <Link to='/'>Buho</Link>
-        </Heading>     */}
-
-        
-
       
     <Menu>
   <MenuButton as={Button} rightIcon={<TiArrowSortedDown />}  className='Menu'>

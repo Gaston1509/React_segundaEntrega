@@ -4,16 +4,18 @@ const productos = [
         nombre: 'Kolsh',
         precio: 1600,
         categoria: 'Rubias',
-        descripcion: 'Cerveza sabor intenso',
-        image: './src/assets/kolsh.jpg',
+        stock: 25,
+        descripcion: 'La Kölsch es una especialidad local de cerveza elaborada en Colonia (Alemania). Es una cerveza clara, su tonalidad es amarilla brillante y tiene un gusto prominente, pero no extremo de lúpulo. Comparada a la cerveza "estándar" alemana, Pils, es menos amarga. ',
+        image: 'https://gaston1509.github.io/Buho-Artesanal/aseets/img/galery/kolsh.jpeg',
     },
     {
         id: 2,
         nombre: 'Golden',
         precio: 1500,
         categoria: 'Rubias',
-        descripcion: 'Cerveza sabor suave',
-        image: './src/assets/Golden.jpg',
+        stock: 15,
+        descripcion: 'Tiene un agradable color dorado, amargor liviano, carbonatación media-alta, un suave sabor a cereal hace el soporte dulce para la combinación de lúpulos alemanes y americanos que entregan frescas notas cítricas y florales, cuerpo medio y agradable espuma. ',
+        image: 'https://gaston1509.github.io/Buho-Artesanal/aseets/img/galery/Golden.jpeg',
 
     },
     {
@@ -21,8 +23,9 @@ const productos = [
         nombre: 'Irish Red',
         precio: 1700,
         categoria: 'Rojas',
-        descripcion: 'Cerveza sabor intenso',
-        image: './src/assets/irish-red.jpg',
+        stock: 30,
+        descripcion: 'De color cobre profundo, medianamente turbia, con espuma densa y cremosa. En nariz se aprecian aromas a caramelo con suaves notas a lúpulo. En boca se denota un leve dulzor y sabor a granos tostados. Equilibrada de cuerpo mediano y compleja. ',
+        image: 'https://gaston1509.github.io/Buho-Artesanal/aseets/img/galery/Irish-red.jpeg',
 
     },
     {
@@ -30,8 +33,9 @@ const productos = [
         nombre: 'Dorada pampeana',
         precio: 1450,
         categoria: 'Rubias',
-        descripcion: 'Cerveza sabor suave',
-        image: './src/assets/dorada-pampeana.jpg',
+        stock: 42,
+        descripcion: 'En sabores predomina el dulzor maltoso inicialmente suave. Típicamente ausentes los sabores a caramelo. El sabor a lúpulo es ligero a moderado (usualmente Cascade), pero no debería ser agresivo. El amargor del lúpulo es de bajo a moderado. ',
+        image: 'https://gaston1509.github.io/Buho-Artesanal/aseets/img/galery/dorada-pampeana.jpeg',
 
     }
 ]
@@ -59,7 +63,11 @@ export const getProductsByCategory = (category) => {
 // FILTRAR PRODUCTO USANDO ParseInt
 export const getProductById = (id) => {
     return new Promise((resolve) => {
-        const productoFiltrado = productos.find((el) => el.id === parseInt(id))
-        resolve(productoFiltrado);
+        const productoFiltrado = productos.find(
+            (el) => el.id === parseInt(id)
+            );
+        setTimeout (() =>{
+            resolve(productoFiltrado);
+        }, 2000)
     })
 }

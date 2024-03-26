@@ -16,9 +16,6 @@ import { Link } from 'react-router-dom'
         />
         <Stack mt='6' spacing='3'>
         <Heading size='md'>{nombre}</Heading>
-        <Text>
-            {descripcion}
-        </Text>
         <Text color='blue.600' fontSize='2xl'>
             ${precio}
         </Text>
