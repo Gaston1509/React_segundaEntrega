@@ -16,11 +16,12 @@ const NavBar = () => {
       
     <Menu>
   <MenuButton as={Button} rightIcon={<TiArrowSortedDown />}  className='Menu'>
+    
     Variedades
   </MenuButton>
   <MenuList>
-    <MenuItem><Link to={'/category/Rubias'}>Rubias</Link></MenuItem>
-    <MenuItem><Link to={'/category/Rojas'}>Rojas</Link></MenuItem>
+    <MenuItem><Link to={'/category/Rubias'}>Cervezas Rubias</Link></MenuItem>
+    <MenuItem><Link to={'/category/Rojas'}>Cervezas Rojas</Link></MenuItem>
   </MenuList>
   </Menu>
 

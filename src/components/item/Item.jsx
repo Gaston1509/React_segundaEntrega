@@ -3,7 +3,7 @@ import './item.css'
 import { Card, CardHeader, CardBody, CardFooter, Stack, Image, Heading, Button, ButtonGroup, Divider, Text } from '@chakra-ui/react'
 import { Link } from 'react-router-dom'
 
-    const Item = ({nombre, descripcion, precio, categoria, image, id}) => {
+    const Item = ({nombre, precio, image, id}) => {
 
     return (
     <div className='card'>
@@ -25,7 +25,9 @@ import { Link } from 'react-router-dom'
     <CardFooter>
         <ButtonGroup spacing='2'>
         <Button variant='solid' colorScheme='blue'>
-            <Link to={`/product/${id}`}>Ver detalle</Link>
+            <Link to={`/product/${id}`}>
+                Ver detalle
+            </Link>
         </Button>
         </ButtonGroup>
     </CardFooter>

@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Routes} from 'react-router-dom'
 import ItemListContainer from './components/itemListContainer/ItemListContainer'
 import ItemDetailContainer from './components/itemDetailContainer/ItemDetailContainer'
 import PageNotFound from './components/pageNotFound/PageNotFound'
+import ItemCount from './components/itenCount/ItemCount'
 import './App.css'
 
 
@@ -20,7 +21,6 @@ const App = () => {
             <Route path='*' element={<PageNotFound />} />
         </Routes>
       </BrowserRouter>
-      
     </ChakraProvider>
   )
 }

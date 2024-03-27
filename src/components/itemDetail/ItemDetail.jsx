@@ -1,6 +1,5 @@
 import React, { useState } from 'react'
 import { Card, CardHeader, CardBody, CardFooter, Flex, Box, Text, Heading, Image, IconButton, } from '@chakra-ui/react'
-//import ItemCount from '../itemCount/ItemCount'
 import './itemDetail.css'
 import ItemCount from '../itenCount/ItemCount'
 import { Link } from 'react-router-dom'
