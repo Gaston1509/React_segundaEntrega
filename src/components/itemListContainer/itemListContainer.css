@@ -14,3 +14,9 @@
     background-color: rgb(120, 233, 120);
     
 }
+.Spinner{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    color: green;
+}

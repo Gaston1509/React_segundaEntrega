@@ -19,3 +19,13 @@
  Text{
     color: #504b4b;
  }
+ .carrito{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #1a1818;
+    font-size: 1.2rem;
+    background-color: #88a958;
+    text-align: center;
+    letter-spacing: 3px;
+ }

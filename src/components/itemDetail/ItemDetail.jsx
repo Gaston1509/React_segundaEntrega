@@ -71,7 +71,7 @@ const ItemDetail = ({
           }}
         ></CardFooter>
         {cantidad > 0 ? (
-          <Link to="/cart">Ir al carrito</Link>
+          <Link to="/cart" className="carrito">Ir al carrito</Link>
         ) : (
           <ItemCount stock={stock} initialValue={1} onAdd={onAdd} />
         )}
