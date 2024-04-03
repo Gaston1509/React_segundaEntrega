@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import {
   Card,
   CardHeader,
@@ -14,6 +14,7 @@ import {
 import "./itemDetail.css";
 import ItemCount from "../itenCount/ItemCount";
 import { Link } from "react-router-dom";
+import CartContext from '../../context/CartContext';
 
 const ItemDetail = ({
   image,
@@ -22,10 +23,21 @@ const ItemDetail = ({
   precio,
   categoria,
   stock,
+  id,
 }) => {
   const [cantidad, setCantidad] = useState(0);
+  
+  const {addItem, cart } = useContext(CartContext)
 
   const onAdd = (quantity) => {
+
+    const item = {
+      id,
+      stock,
+      nombre,
+      precio
+    }
+    addItem(item, quantity)
     console.log(`Agregaste ${quantity} productos`);
     setCantidad(quantity);
   };

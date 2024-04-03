@@ -1,16 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import { RiShoppingCartLine } from "react-icons/ri";
-import { Box } from "@chakra-ui/react";
+import { Box, Flex, Text, useConst } from "@chakra-ui/react";
 import { Link } from "react-router-dom";
+import Context from "../../context/CartContext";
 import "./cartWidget.css";
 
 const CartWidget = () => {
+
+  const { getQuantity } = useContext(Context)
+
   return (
-    <Box mr={3} className="CartNav">
+    <Flex mr={3} className="CartNav">
       <Link to="/cart">
         <RiShoppingCartLine />
-      </Link>
-    </Box>
+      </Link><Text className="cantidad">{getQuantity()}</Text>
+    </Flex>
   );
 };
 
