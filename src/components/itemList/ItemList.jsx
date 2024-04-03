@@ -2,7 +2,7 @@ import React from "react";
 import Item from "../item/Item";
 
 const ItemList = ({ productos }) => {
-  console.log(productos);
+  // console.log(productos);
   return (
     <div>
       {productos.map((prod) => (

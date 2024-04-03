@@ -22,7 +22,7 @@ const ItemListContainer = ({ title }) => {
       .finally(() => setLoading(false));
   }, [categoryId]);
 
-  console.log(productos);
+  // console.log(productos);
 
   return (
     <div>

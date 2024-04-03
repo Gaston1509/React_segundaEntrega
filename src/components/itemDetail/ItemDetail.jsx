@@ -38,7 +38,7 @@ const ItemDetail = ({
       precio
     }
     addItem(item, quantity)
-    console.log(`Agregaste ${quantity} productos`);
+    // console.log(`Agregaste ${quantity} productos`);
     setCantidad(quantity);
   };
 
