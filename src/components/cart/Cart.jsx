@@ -13,6 +13,9 @@ import {
   Button,
   Heading,
   Box,
+  Flex,
+  Image,
+  ChakraProvider,
 } from "@chakra-ui/react";
 import { RiDeleteBin6Line } from "react-icons/ri";
 import { Link } from "react-router-dom";
@@ -21,7 +24,7 @@ import "./cart.css";
 const Cart = () => {
   const { cart, getTotal, clearCart, removeItem } = useContext(CartContext);
 
-  console.log('cart', cart);
+  console.log("cart", cart);
 
   if (cart.length === 0) {
     return (
@@ -69,6 +72,11 @@ const Cart = () => {
                 <Th>Total de la compra: $ {getTotal()}</Th>
                 <Th>
                   <Button onClick={clearCart}>Vaciar Carrito</Button>
+                </Th>
+                <Th>
+                  <Link to="/Checkout" className="">
+                    Finalizar compra
+                  </Link>
                 </Th>
               </Tr>
             </Tfoot>

@@ -1,11 +1,12 @@
 import React from "react";
 import Item from "../item/Item";
+// import { inventario } from "../../data/asyncMock";
 
-const ItemList = ({ productos }) => {
+const ItemList = ({ inventario }) => {
   // console.log(productos);
   return (
     <div>
-      {productos.map((prod) => (
+      {inventario.map((prod) => (
         <Item {...prod} key={prod.id} />
       ))}
     </div>

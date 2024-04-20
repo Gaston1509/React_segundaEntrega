@@ -66,6 +66,7 @@ export const CartContextProvider = ({ children }) => {
         getQuantity,
         clearCart,
         removeItem,
+        getTotal,
       }}
     >
       {children}

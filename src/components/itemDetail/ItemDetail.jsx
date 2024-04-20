@@ -14,7 +14,7 @@ import {
 import "./itemDetail.css";
 import ItemCount from "../itenCount/ItemCount";
 import { Link } from "react-router-dom";
-import CartContext from '../../context/CartContext';
+import CartContext from "../../context/CartContext";
 
 const ItemDetail = ({
   image,
@@ -26,18 +26,18 @@ const ItemDetail = ({
   id,
 }) => {
   const [cantidad, setCantidad] = useState(0);
-  
-  const {addItem, cart } = useContext(CartContext)
+
+  const { addItem, cart } = useContext(CartContext);
 
   const onAdd = (quantity) => {
-
     const item = {
       id,
       stock,
       nombre,
-      precio
-    }
-    addItem(item, quantity)
+      precio,
+      image,
+    };
+    addItem(item, quantity);
     // console.log(`Agregaste ${quantity} productos`);
     setCantidad(quantity);
   };
@@ -83,7 +83,9 @@ const ItemDetail = ({
           }}
         ></CardFooter>
         {cantidad > 0 ? (
-          <Link to="/cart" className="carrito">Ir al carrito</Link>
+          <Link to="/cart" className="carrito">
+            Ir al carrito
+          </Link>
         ) : (
           <ItemCount stock={stock} initialValue={1} onAdd={onAdd} />
         )}

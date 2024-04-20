@@ -1,4 +1,4 @@
-const productos = [
+export const inventario = [
   {
     id: 1,
     nombre: "Kolsh",
@@ -48,7 +48,7 @@ const productos = [
 export const getProducts = () => {
   return new Promise((response) => {
     setTimeout(() => {
-      response(productos);
+      response(inventario);
     }, 2000);
   });
 };
@@ -56,7 +56,7 @@ export const getProducts = () => {
 // FILTRAR POR CATEGORIA
 export const getProductsByCategory = (category) => {
   return new Promise((resolve) => {
-    const productosfiltrados = productos.filter(
+    const productosfiltrados = inventario.filter(
       (el) => el.categoria === category
     );
     setTimeout(() => {
@@ -68,7 +68,7 @@ export const getProductsByCategory = (category) => {
 // FILTRAR PRODUCTO DETALLE USANDO ParseInt
 export const getProductById = (id) => {
   return new Promise((resolve) => {
-    const productoFiltrado = productos.find((el) => el.id === parseInt(id));
+    const productoFiltrado = inventario.find((el) => el.id === parseInt(id));
     setTimeout(() => {
       resolve(productoFiltrado);
     }, 2000);
