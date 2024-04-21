@@ -1,10 +1,6 @@
 import { Heading } from "@chakra-ui/react";
 import React, { useEffect, useState } from "react";
-import {
-  getProducts,
-  getProductsByCategory,
-  inventario,
-} from "../../data/asyncMock";
+import { getProducts, getProductsByCategory } from "../../data/asyncMock";
 import { useParams } from "react-router-dom";
 import { Spinner } from "@chakra-ui/react";
 import { collection, getDocs, query, where } from "firebase/firestore";
@@ -28,7 +24,6 @@ const ItemListContainer = ({ title }) => {
           );
 
       const response = await getDocs(queryRef);
-      // console.log(response.docs);
 
       const products = response.docs.map((doc) => {
         const newObj = {
@@ -44,8 +39,6 @@ const ItemListContainer = ({ title }) => {
 
     getData();
   }, [categoryId]);
-
-  // console.log(productos);
 
   return (
     <div>

@@ -38,7 +38,6 @@ const ItemDetail = ({
       image,
     };
     addItem(item, quantity);
-    // console.log(`Agregaste ${quantity} productos`);
     setCantidad(quantity);
   };
 

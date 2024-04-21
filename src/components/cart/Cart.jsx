@@ -24,8 +24,6 @@ import "./cart.css";
 const Cart = () => {
   const { cart, getTotal, clearCart, removeItem } = useContext(CartContext);
 
-  console.log("cart", cart);
-
   if (cart.length === 0) {
     return (
       <>

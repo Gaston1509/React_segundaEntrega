@@ -5,7 +5,6 @@ import "./itemCount.css";
 
 const ItemCount = ({ stock, initialValue, onAdd }) => {
   const { count, incrementar, decrementar } = useCounter(stock, initialValue);
-  // console.log(count);
 
   return (
     <div className="contadores">

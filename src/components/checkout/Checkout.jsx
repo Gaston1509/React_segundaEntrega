@@ -19,16 +19,18 @@ import Context from "../../context/CartContext";
 import Swal from "sweetalert2";
 import { useNavigate } from "react-router-dom";
 import { db } from "../../config/firebase";
-import { inventario } from "../../data/asyncMock";
 
 const Checkout = () => {
   const [user, setUser] = useState({
     name: "",
     email: "",
-    reapetedEmail: "",
+    repeatedEmail: "",
     phone: "",
   });
   const [emailMatch, setEmailMatch] = useState(true);
+  const [nameValid, setNameValid] = useState(true);
+  const [emailValid, setEmailValid] = useState(true);
+  const [phoneValid, setPhoneValid] = useState(true);
 
   const { cart, getTotal, clearCart } = useContext(Context);
 
@@ -41,21 +43,57 @@ const Checkout = () => {
 
   const navigate = useNavigate();
 
-  const validateEmails = () => {
-    if (user.email === user.reapetedEmail) {
-      setEmailMatch(true);
+  const validateFields = () => {
+    let valid = true;
+
+    if (user.name.trim().length < 3) {
+      setNameValid(false);
+      valid = false;
     } else {
-      setEmailMatch(false);
+      setNameValid(true);
     }
+
+    if (!isValidEmail(user.email)) {
+      setEmailValid(false);
+      valid = false;
+    } else {
+      setEmailValid(true);
+    }
+
+    if (
+      !isValidEmail(user.repeatedEmail) ||
+      user.email !== user.repeatedEmail
+    ) {
+      setEmailMatch(false);
+      valid = false;
+    } else {
+      setEmailMatch(true);
+    }
+
+    if (!isValidPhone(user.phone)) {
+      setPhoneValid(false);
+      valid = false;
+    } else {
+      setPhoneValid(true);
+    }
+
+    return valid;
   };
 
-  const validateForm = () => {
-    // validaciones al form
+  const isValidEmail = (email) => {
+    // validar email
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  const isValidPhone = (phone) => {
+    // validar telefono
+    const phoneRegex = /^\d{10}$/;
+    return phoneRegex.test(phone);
   };
 
   const getOrder = async () => {
-    validateEmails();
-    if (emailMatch) {
+    if (validateFields()) {
       const queryRef = collection(db, "orders");
       try {
         const order = {
@@ -83,7 +121,7 @@ const Checkout = () => {
     } else {
       Swal.fire({
         title: "Error",
-        text: `Por favor, verifica que los datos ingresados sean correctos`,
+        text: `Por favor, verifica que los emails coincidan, nombre: mínimo tres letras, teléfono de 10 caracteres`,
         icon: "error",
       });
     }
@@ -107,6 +145,7 @@ const Checkout = () => {
           <Flex w={"100%"} justify={"center"} align={"center"}>
             {cart.map((productos) => (
               <Image
+                key={productos.id}
                 boxSize="15%"
                 m={2}
                 src={productos.image}
@@ -125,7 +164,7 @@ const Checkout = () => {
         </Box>
       </Flex>
       <Divider mt={10} w={"90%"} />
-      <FormControl w={"40%"}>
+      <FormControl w={"40%"} isInvalid={!nameValid}>
         <FormLabel textAlign={"center"} fontSize={"2xl"} color={"#fff"} mt={4}>
           Datos de facturación
         </FormLabel>
@@ -142,13 +181,15 @@ const Checkout = () => {
           onChange={updateUser}
           mb={2}
           placeholder="Email"
+          isInvalid={!emailValid}
         />
         <Input
           type="email"
-          name="reapetedEmail"
+          name="repeatedEmail"
           onChange={updateUser}
           mb={2}
           placeholder="Repetir email"
+          isInvalid={!emailMatch}
         />
         <Input
           type="text"
@@ -156,6 +197,7 @@ const Checkout = () => {
           onChange={updateUser}
           mb={2}
           placeholder="Teléfono"
+          isInvalid={!phoneValid}
         />
         <Flex w={"100%"} justify={"center"} align={"center"}>
           <Button

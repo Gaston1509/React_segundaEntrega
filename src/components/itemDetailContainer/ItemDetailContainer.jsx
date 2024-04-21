@@ -28,8 +28,6 @@ const ItemDetailContainer = () => {
     getProduct();
   }, []);
 
-  // console.log(product);
-
   return (
     <div className="Spinner">
       {loading ? (

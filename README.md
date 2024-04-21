@@ -1,8 +1,29 @@
-# React + Vite
+# Tienda Cerveza Búho Artesanal
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Descripción
 
-Currently, two official plugins are available:
+ecommerce realizado para el curso de CoderHouse
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
+
+### Logo de la empresa
+
+![image](../SegundaEntrega/src/assets/logo_1.png)
+
+---
+
+### Herramientas utilizadas
+
+- espacio
+- espacio
+
+---
+
+### como instalar la app
+
+- Paso 1
+  - git clone
+
+### Datos del desarrolador
+
+- Datos linkedin
