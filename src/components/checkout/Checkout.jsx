@@ -1,4 +1,5 @@
 import React, { useContext, useState } from "react";
+import "./checkout.css";
 import {
   FormControl,
   FormLabel,
@@ -139,14 +140,14 @@ const Checkout = () => {
         borderRadius={"5px"}
       >
         <Box m={2} w={"100%"}>
-          <Heading textAlign={"center"} color={"#243F4D"}>
-            Resumen:
+          <Heading textAlign={"center"} color={"#b29a98"} mb={4} mt={4}>
+            Tus articulos:
           </Heading>
           <Flex w={"100%"} justify={"center"} align={"center"}>
             {cart.map((productos) => (
               <Image
                 key={productos.id}
-                boxSize="15%"
+                boxSize="10%"
                 m={2}
                 src={productos.image}
                 alt={productos.nombre}
@@ -154,16 +155,22 @@ const Checkout = () => {
             ))}
           </Flex>
           <Box position="relative" padding="10" w={"100%"}>
-            <Divider />
+            {/* <Divider /> */}
             <AbsoluteCenter w={"100%"}>
-              <Text fontSize={"2xl"} textAlign={"center"} color={"#243F4D"}>
+              <Text
+                fontSize={"2xl"}
+                textAlign={"center"}
+                color={"#243F4D"}
+                mt={5}
+                pt={12}
+              >
                 Total de la compra ${getTotal()}
               </Text>
             </AbsoluteCenter>
           </Box>
         </Box>
       </Flex>
-      <Divider mt={10} w={"90%"} />
+      {/* <Divider mt={10} w={"90%"} /> */}
       <FormControl w={"40%"} isInvalid={!nameValid}>
         <FormLabel textAlign={"center"} fontSize={"2xl"} color={"#fff"} mt={4}>
           Datos de facturación

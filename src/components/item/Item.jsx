@@ -22,14 +22,16 @@ const Item = ({ nombre, precio, image, id }) => {
         <CardBody>
           <Image src={image} alt={nombre} borderRadius="lg" />
           <Stack mt="6" spacing="3">
-            <Heading size="md">{nombre}</Heading>
+            <Heading color="#b29a98" size="lg">
+              {nombre}
+            </Heading>
             <Text color="blue.600" fontSize="2xl">
               ${precio}
             </Text>
           </Stack>
         </CardBody>
         <Divider />
-        <CardFooter>
+        <CardFooter className="center">
           <ButtonGroup spacing="2">
             <Button variant="solid" colorScheme="blue">
               <Link to={`/product/${id}`}>Ver detalle</Link>

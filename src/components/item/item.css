@@ -1,5 +1,18 @@
-.card{
-   display: flex;
-   justify-content: center;
-   padding-top: 10px;
+.card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  display: grid;
+  justify-content: center;
+  padding-top: 10px;
+  flex-direction: row;
+  text-align: center;
+  color: #b29a98;
+  letter-spacing: 2px;
+}
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
 }

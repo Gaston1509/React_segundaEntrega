@@ -72,7 +72,7 @@ const Cart = () => {
                   <Button onClick={clearCart}>Vaciar Carrito</Button>
                 </Th>
                 <Th>
-                  <Link to="/Checkout" className="">
+                  <Link to="/Checkout" className="chakra-button css-ez23ye end">
                     Finalizar compra
                   </Link>
                 </Th>

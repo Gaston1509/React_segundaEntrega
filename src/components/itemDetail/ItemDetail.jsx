@@ -52,6 +52,7 @@ const ItemDetail = ({
                   size="xl"
                   justifyContent="center"
                   className="tituloPrduct"
+                  color="#b29a98"
                 >
                   {nombre}
                 </Heading>
